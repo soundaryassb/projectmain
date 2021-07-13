@@ -49,4 +49,4 @@ A question will be displayed with 4 options. Press the key (A/B/C/D) correspondi
 # SWOT Analysis
 
 
-
+![image](https://user-images.githubusercontent.com/86274176/125477408-29707d09-2936-4d5d-b3b3-54df29d5aa96.png)
