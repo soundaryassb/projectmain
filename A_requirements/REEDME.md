@@ -43,3 +43,10 @@ QUIT
 Select Category (from 1 to 4)
 
 A question will be displayed with 4 options. Press the key (A/B/C/D) corresponding to the correct answer according to you.) Answer maximum number of questions correctly to achieve highest scores.
+
+
+
+# SWOT Analysis
+
+
+
