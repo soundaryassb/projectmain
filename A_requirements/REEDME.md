@@ -50,3 +50,21 @@ A question will be displayed with 4 options. Press the key (A/B/C/D) correspondi
 
 
 ![image](https://user-images.githubusercontent.com/86274176/125477408-29707d09-2936-4d5d-b3b3-54df29d5aa96.png)
+
+
+## WHO:
+- any one can play this quiz game for recreation, and also improve there knowledge.
+
+## WHAT:
+-	This is a game which displays a random questions from the quizlist, and asks the user the guess it correct so that the User win the game otherwise the User looses after a specific number of trials.
+
+## When:
+
+- It's a great game for improving knowledge in any time.
+
+
+## Where:
+
+- This game can be played anywhere independent of the platforms and can be act as a tool for improving knowledge.
+
+
