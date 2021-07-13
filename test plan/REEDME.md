@@ -18,3 +18,10 @@ next
 next
 
 ![image](https://user-images.githubusercontent.com/86274176/125455747-80c52e2e-7012-4383-a0d4-8e970c165a5d.png)
+
+
+
+## quiz succesfully complited
+
+
+![image](https://user-images.githubusercontent.com/86274176/125456019-9a943b85-b45a-4a34-b1a4-e4dc244a2391.png)
