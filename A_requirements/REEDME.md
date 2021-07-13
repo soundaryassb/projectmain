@@ -20,4 +20,26 @@ In the second and more interesting round of this quiz game in C, the user will b
 
 # Defining Our System
 
+![image](https://user-images.githubusercontent.com/86274176/125453486-5a22081a-36d5-40a4-a98e-f0e267d98b66.png)
 
+
+# How to Play
+
+
+Start the game.
+
+Enter your name.
+
+Press key according to the menu :-
+
+START GAME
+
+RULES/HELP
+
+HIGH SCORES
+
+QUIT
+
+Select Category (from 1 to 4)
+
+A question will be displayed with 4 options. Press the key (A/B/C/D) corresponding to the correct answer according to you.) Answer maximum number of questions correctly to achieve highest scores.
