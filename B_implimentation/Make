@@ -1,10 +1,55 @@
-PROJECT_NAME=Quiz
-SRC = b.c\
-test_b.c
+ifdef OS
+   RM = del /q
+   FixPath = $(subst /,\,$1)
+   EXEC = exe
+else
+   ifeq ($(shell uname), Linux)
+      RM = rm -rf
+      FixPath = $1
+	  EXEC = out
+   endif
+endif
 
-INC = unity
+PROJ_NAME = quiz
+TEST_PROJ_NAME = $(PROJ_NAME)
 
-TEST=unity\unity.c
+BUILD_DIR = Build
 
-$(PROJECT_NAME).exe : $(SRC) $(TEST)
-	gcc -I $(INC) $(SRC) $(TEST) -o $(PROJECT_NAME).exe
+SRC = src/main.c src/help.c src/edit_score.c src/reset_score.c src/show_record.c
+SRC1 =src/help.c src/edit_score.c src/reset_score.c src/show_record.c
+INC = inc/quiz.h\
+unity/unity.h unity/unity_internals.h
+
+
+TEST_SRC = testfile/TEST_quiz.c\
+unity/unity.c
+
+
+
+all: $(SRC) $(BUILD_DIR)
+	gcc $(SRC) $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+
+run: all
+	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+
+$(BUILD_DIR):
+	mkdir $(BUILD_DIR)
+
+testing: $(TEST_SRC) $(SRC1)
+	gcc $^ $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+
+valgrind :
+	valgrind $(call FixPath,$(BUILD_DIR)/$(PROJECT_NAME).out)
+
+analysis: all
+	cppcheck --enable=all $(SRC)
+	valgrind --leak-check=full $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+
+coverage:
+	gcc -fprofile-arcs -ftest-coverage $(SRC1) $(TEST_SRC) $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
+	gcov -a $(SRC1)
+
+clean:
+	$(RM) $(call FixPath,$(BUILD_DIR)/*) *.gcda *.gcno *.gcov
